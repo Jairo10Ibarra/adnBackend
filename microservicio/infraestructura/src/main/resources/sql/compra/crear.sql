@@ -1,0 +1,1 @@
+insert into compra (precio, idCliente,fecha_Compra) values (:precio, :idCliente, :fechaCompra)

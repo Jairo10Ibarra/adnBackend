@@ -1,0 +1,2 @@
+select id,nombreCliente,tipoCliente,fechaCreacionCliente
+from cliente

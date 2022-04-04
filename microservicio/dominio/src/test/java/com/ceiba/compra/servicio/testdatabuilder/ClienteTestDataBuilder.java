@@ -1,0 +1,48 @@
+package com.ceiba.compra.servicio.testdatabuilder;
+
+import com.ceiba.cliente.modelo.entidad.Cliente;
+
+import java.time.LocalDateTime;
+
+public class ClienteTestDataBuilder {
+
+
+    private Long idCliente;
+    private String nombreCliente;
+    private int tipoCliente;
+    private LocalDateTime fechaCreacionCliente;
+
+
+    public ClienteTestDataBuilder() {
+        nombreCliente = "jairo";
+        tipoCliente = 10;
+        fechaCreacionCliente = LocalDateTime.now();
+    }
+
+    public ClienteTestDataBuilder conTipoDeCliente(int tipoCliente) {
+        this.tipoCliente = tipoCliente;
+        return this;
+    }
+
+
+    public ClienteTestDataBuilder conNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+        return this;
+    }
+
+    public ClienteTestDataBuilder conIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
+        return this;
+    }
+
+    public ClienteTestDataBuilder conFechaCreacionCliente(LocalDateTime fechaCreacion) {
+        this.fechaCreacionCliente = fechaCreacion;
+        return this;
+    }
+
+
+    public Cliente build() {
+        return new Cliente(idCliente, nombreCliente, tipoCliente, fechaCreacionCliente);
+    }
+
+}
