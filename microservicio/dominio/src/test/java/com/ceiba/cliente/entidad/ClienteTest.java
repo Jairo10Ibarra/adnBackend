@@ -25,14 +25,5 @@ public class ClienteTest {
         assertEquals(fechaCreacion, cliente.getFechaCreacionCliente());
     }
 
-    @Test
-    void deberiaFallarSinNombreDeCliente() {
-
-        ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder().conNombreCliente(null).conIdCliente(1L);
-            BasePrueba.assertThrows(() -> {
-                        clienteTestDataBuilder.build();
-                },
-                ExcepcionValorObligatorio.class, "Se debe ingresar el nombre de cliente");
-    }
 
 }
