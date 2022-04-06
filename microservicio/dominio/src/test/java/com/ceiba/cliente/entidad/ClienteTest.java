@@ -1,8 +1,9 @@
 package com.ceiba.cliente.entidad;
+
 import com.ceiba.BasePrueba;
-import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.servicio.testdatabuilder.ClienteTestDataBuilder;
+import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -23,6 +24,30 @@ public class ClienteTest {
         assertEquals("jairo", cliente.getNombreCliente());
         assertEquals(10, cliente.getTipoCliente());
         assertEquals(fechaCreacion, cliente.getFechaCreacionCliente());
+    }
+
+    @Test
+    void deberiaFallarSinNombreCliente() {
+
+        //Arrange
+        ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder().conNombreCliente(null).conIdCliente(1l);
+        //act-assert
+        BasePrueba.assertThrows(() -> {
+                    clienteTestDataBuilder.build();
+                },
+                ExcepcionValorObligatorio.class, "Se debe ingresar el nombre del cliente");
+    }
+
+    @Test
+    void deberiaFallarSinClave() {
+
+        //Arrange
+        ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder().conFechaCreacionCliente(null).conIdCliente(1l);
+        //act-assert
+        BasePrueba.assertThrows(() -> {
+                    clienteTestDataBuilder.build();
+                },
+                ExcepcionValorObligatorio.class, "Se debe ingresar la fecha de creación del cliente");
     }
 
 
