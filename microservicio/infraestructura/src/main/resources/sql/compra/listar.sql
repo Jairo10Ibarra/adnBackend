@@ -1,2 +1,2 @@
-select id,precio,idCliente,fechaCompra
+select id,precio,idCliente,fecha_creacion
 from compra

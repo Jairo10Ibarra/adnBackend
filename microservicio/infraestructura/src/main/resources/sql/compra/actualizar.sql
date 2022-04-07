@@ -1,4 +1,4 @@
-update cliente
+update compra
 set precio = :precio,
 	idCliente = :idCliente,
 	fecha_Compra = :fechaCompra

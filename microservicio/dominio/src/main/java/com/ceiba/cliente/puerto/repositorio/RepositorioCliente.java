@@ -34,6 +34,7 @@ public interface RepositorioCliente {
      */
     boolean existePorId(Long idCliente);
 
+
     /**
      * Permite eliminar un cliente
      *

@@ -23,6 +23,12 @@ public class CompraTestDataBuilder {
         return this;
     }
 
+    public CompraTestDataBuilder conIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+        return this;
+    }
+
+
     public CompraTestDataBuilder conIdCompra(Long idCompra) {
         this.idCompra = idCompra;
         return this;
