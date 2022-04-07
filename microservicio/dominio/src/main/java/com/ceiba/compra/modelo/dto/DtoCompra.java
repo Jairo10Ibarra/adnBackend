@@ -8,9 +8,9 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 public class DtoCompra {
-    private Long idCompra;
-    private double precio;
-    private int idCliente;
-    private LocalDateTime fechaCompra;
+     Long idCompra;
+     double precio;
+     int idCliente;
+     LocalDateTime fechaCompra;
 
 }

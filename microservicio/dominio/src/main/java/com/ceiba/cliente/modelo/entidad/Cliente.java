@@ -12,10 +12,10 @@ public class Cliente {
     private static final String SE_DEBE_INGRESAR_EL_NOMBRE_DE_CLIENTE = "Se debe ingresar el nombre del cliente";
     private static final String SE_DEBE_INGRESAR_LA_FECHA_CREACION_CLIENTE = "Se debe ingresar la fecha de creación del cliente";
 
-    private Long id;
-    private String nombreCliente;
-    private int tipoCliente;
-    private LocalDateTime fechaCreacion;
+     Long id;
+     String nombreCliente;
+     int tipoCliente;
+     LocalDateTime fechaCreacion;
 
 
     public Cliente(Long id, String nombreCliente, int tipoCliente, LocalDateTime fechaCreacionCliente) {
