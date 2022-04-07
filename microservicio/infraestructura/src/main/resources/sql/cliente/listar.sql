@@ -1,2 +1,2 @@
-select id,nombreCliente,tipoCliente,fechaCreacionCliente
+select id,nombreCliente,tipoCliente,fecha_Creacion
 from cliente
