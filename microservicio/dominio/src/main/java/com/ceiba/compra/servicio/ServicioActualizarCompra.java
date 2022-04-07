@@ -20,7 +20,7 @@ public class ServicioActualizarCompra {
     }
 
     private void validarExistenciaPreviaCompra(Compra compra) {
-        boolean existe = this.repositorioCompra.existePorId(compra.getIdCompra());
+        boolean existe = this.repositorioCompra.existePorId(compra.getId());
         if (!existe) {
             throw new ExcepcionDuplicidad(LA_COMPRA_NO_EXISTE_EN_EL_SISTEMA);
         }

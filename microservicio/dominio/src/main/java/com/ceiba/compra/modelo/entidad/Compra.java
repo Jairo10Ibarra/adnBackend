@@ -14,19 +14,19 @@ public class Compra {
     private static final String EL_PRECIO_DE_LA_COMPRA_DEBE_SER_MAYOR_A_CERO = "El precio de la compra debe ser mayor a cero";
     private static final String SE_DEBE_INGRESAR_LA_FECHA_COMPRA = "Se debe ingresar la fecha de creación de la compra";
 
-    Long idCompra;
+    Long id;
     double precio;
-    int idCLiente;
+    int idCliente;
     LocalDateTime fechaCompra;
 
 
-    public Compra(Long idCompra, double precio, int idCLiente, LocalDateTime fechaCompra) {
+    public Compra(Long id, double precio, int idCliente, LocalDateTime fechaCompra) {
         validarObligatorio(fechaCompra, SE_DEBE_INGRESAR_LA_FECHA_COMPRA);
         validarPositivo(precio, EL_PRECIO_DE_LA_COMPRA_DEBE_SER_MAYOR_A_CERO);
 
-        this.idCompra = idCompra;
+        this.id = id;
         this.precio = precio;
-        this.idCLiente = idCLiente;
+        this.idCliente = idCliente;
         this.fechaCompra = fechaCompra;
     }
 }

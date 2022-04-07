@@ -18,9 +18,9 @@ public class CompraTest {
     void deberiaCrearCorrectamenteUnaCompra() {
         LocalDateTime fechaCreacion = LocalDateTime.now();
         Compra compra = new CompraTestDataBuilder().conFechaCompra(fechaCreacion).conIdCompra(1L).build();
-        assertEquals(1, compra.getIdCompra());
+        assertEquals(1, compra.getId());
         assertEquals(20000, compra.getPrecio());
-        assertEquals(1, compra.getIdCLiente());
+        assertEquals(1, compra.getIdCliente());
         assertEquals(fechaCreacion, compra.getFechaCompra());
     }
 

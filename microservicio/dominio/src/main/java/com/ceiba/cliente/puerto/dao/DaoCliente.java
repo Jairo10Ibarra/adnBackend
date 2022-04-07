@@ -13,4 +13,12 @@ public interface DaoCliente {
      */
     List<DtoCliente> listar();
 
+    /**
+     * Permite consultar cliente por medio del id
+     *
+     * @param idCliente identificador del cliente
+     * @return los clientes
+     */
+    DtoCliente consultarPorId(int idCliente);
+
 }
