@@ -4,7 +4,7 @@ jasypt:
       algorithm: PBEWithMD5AndDES
 
 server:
-   port: 8090
+   port: 8070
    servlet:
       context-path: /comprasAdn
       session:

@@ -16,7 +16,7 @@ public class CompraTestDataBuilder {
 
     public CompraTestDataBuilder() {
         precio = 20000;
-        idCliente = 10;
+        idCliente = 1;
         fechaCompra = LocalDateTime.now();
     }
 

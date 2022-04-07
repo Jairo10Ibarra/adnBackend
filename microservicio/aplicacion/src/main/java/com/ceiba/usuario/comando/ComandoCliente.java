@@ -16,6 +16,6 @@ public class ComandoCliente {
     private Long idCliente;
     private String nombreCliente;
     private int tipoCliente;
-    private LocalDateTime fechaCreacionCliente;
+    private LocalDateTime fechaCreacion;
 
 }

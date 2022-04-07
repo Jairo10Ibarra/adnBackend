@@ -1,1 +1,1 @@
-insert into cliente (nombreCliente, tipoCliente,fecha_Creacion_Cliente) values (:nombreCliente, :tipoCliente, :fechaCreacionCliente)
+insert into cliente (nombreCliente, tipoCliente,fecha_creacion) values (:nombreCliente, :tipoCliente, :fechaCreacion)

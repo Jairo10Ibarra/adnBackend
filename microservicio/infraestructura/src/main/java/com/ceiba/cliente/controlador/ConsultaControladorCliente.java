@@ -22,7 +22,7 @@ public class ConsultaControladorCliente {
     }
 
     @GetMapping
-    @ApiOperation("Listar Usuarios")
+    @ApiOperation("Listar clientes")
     public List<DtoCliente> listar() {
         return this.manejadorListarClientes.ejecutar();
     }

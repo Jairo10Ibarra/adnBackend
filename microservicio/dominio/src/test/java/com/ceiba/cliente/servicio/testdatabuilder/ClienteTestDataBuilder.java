@@ -6,17 +6,15 @@ import java.time.LocalDateTime;
 
 public class ClienteTestDataBuilder {
 
-
     private Long idCliente;
     private String nombreCliente;
     private int tipoCliente;
-    private LocalDateTime fechaCreacionCliente;
-
+    private LocalDateTime fechaCreacion;
 
     public ClienteTestDataBuilder() {
         nombreCliente = "jairo";
         tipoCliente = 10;
-        fechaCreacionCliente = LocalDateTime.now();
+        fechaCreacion = LocalDateTime.now();
     }
 
     public ClienteTestDataBuilder conNombreCliente(String nombreCliente) {
@@ -36,13 +34,13 @@ public class ClienteTestDataBuilder {
     }
 
     public ClienteTestDataBuilder conFechaCreacionCliente(LocalDateTime fechaCreacion) {
-        this.fechaCreacionCliente = fechaCreacion;
+        this.fechaCreacion = fechaCreacion;
         return this;
     }
 
 
     public Cliente build() {
-        return new Cliente(idCliente, nombreCliente, tipoCliente, fechaCreacionCliente);
+        return new Cliente(idCliente, nombreCliente, tipoCliente, fechaCreacion);
     }
 
 }

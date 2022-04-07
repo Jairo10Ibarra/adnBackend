@@ -7,6 +7,7 @@ import com.ceiba.usuario.comando.manejador.ManejadorCrearCliente;
 import com.ceiba.usuario.comando.manejador.ManejadorEliminarCliente;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,6 +20,7 @@ public class ComandoControladorCliente {
     private final ManejadorEliminarCliente manejadorEliminarCliente;
     private final ManejadorActualizarCliente manejadorActualizarCliente;
 
+    @Autowired
     public ComandoControladorCliente(ManejadorCrearCliente manejadorCrearCliente,
                                      ManejadorEliminarCliente manejadorEliminarCliente,
                                      ManejadorActualizarCliente manejadorActualizarCliente) {

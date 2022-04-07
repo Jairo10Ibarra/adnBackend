@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-public class ServicioActualizarUsuarioTest {
+class ServicioActualizarUsuarioTest {
 
     @Test
     @DisplayName("Deberia validar la existencia previa del usuario")
@@ -20,7 +20,7 @@ public class ServicioActualizarUsuarioTest {
         Mockito.when(repositorioUsuario.existePorId(Mockito.anyLong())).thenReturn(false);
         ServicioActualizarUsuario servicioActualizarUsuario = new ServicioActualizarUsuario(repositorioUsuario);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioActualizarUsuario.ejecutar(usuario), ExcepcionDuplicidad.class,"El no usuario existe en el sistema");
+        BasePrueba.assertThrows(() -> servicioActualizarUsuario.ejecutar(usuario), ExcepcionDuplicidad.class,"El usuario no existe en el sistema");
     }
 
     @Test

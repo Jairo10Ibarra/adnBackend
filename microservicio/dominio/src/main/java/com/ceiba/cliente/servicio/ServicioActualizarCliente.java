@@ -6,7 +6,7 @@ import com.ceiba.cliente.modelo.entidad.Cliente;
 
 public class ServicioActualizarCliente {
 
-    private static final String EL_CLIENTE_NO_EXISTE_EN_EL_SISTEMA = "El no cliente existe en el sistema";
+    private static final String EL_CLIENTE_NO_EXISTE_EN_EL_SISTEMA = "El cliente no existe en el sistema";
 
     private RepositorioCliente repositorioCliente;
 
@@ -20,7 +20,7 @@ public class ServicioActualizarCliente {
     }
 
     public void validarExistenciaPreviaCliente(Cliente cliente) {
-        boolean existe = this.repositorioCliente.existePorId(cliente.getIdCliente());
+        boolean existe = this.repositorioCliente.existePorId(cliente.getId());
         if (!existe) {
             throw new ExcepcionDuplicidad(EL_CLIENTE_NO_EXISTE_EN_EL_SISTEMA);
         }

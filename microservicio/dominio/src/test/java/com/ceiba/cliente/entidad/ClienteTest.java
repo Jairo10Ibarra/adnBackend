@@ -20,10 +20,10 @@ public class ClienteTest {
 
         LocalDateTime fechaCreacion = LocalDateTime.now();
         Cliente cliente = new ClienteTestDataBuilder().conFechaCreacionCliente(fechaCreacion).conIdCliente(1L).build();
-        assertEquals(1, cliente.getIdCliente());
+        assertEquals(1, cliente.getId());
         assertEquals("jairo", cliente.getNombreCliente());
         assertEquals(10, cliente.getTipoCliente());
-        assertEquals(fechaCreacion, cliente.getFechaCreacionCliente());
+        assertEquals(fechaCreacion, cliente.getFechaCreacion());
     }
 
     @Test

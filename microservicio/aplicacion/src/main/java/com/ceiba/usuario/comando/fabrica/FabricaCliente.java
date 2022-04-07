@@ -1,7 +1,7 @@
 package com.ceiba.usuario.comando.fabrica;
 
-import com.ceiba.usuario.comando.ComandoCliente;
 import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.usuario.comando.ComandoCliente;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,7 +12,7 @@ public class FabricaCliente {
                 comandoCliente.getIdCliente(),
                 comandoCliente.getNombreCliente(),
                 comandoCliente.getTipoCliente(),
-                comandoCliente.getFechaCreacionCliente()
+                comandoCliente.getFechaCreacion()
         );
     }
 
