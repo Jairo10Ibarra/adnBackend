@@ -37,9 +37,9 @@ public class RepositorioCompraMysql implements RepositorioCompra {
     }
 
     @Override
-    public boolean existe(Long idCompra) {
+    public boolean existe(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("idCompra", idCompra);
+        paramSource.addValue("id", id);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);
     }
 

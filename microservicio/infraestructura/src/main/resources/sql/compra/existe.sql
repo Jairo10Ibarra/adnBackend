@@ -1,1 +1,1 @@
-select count(1) from compra where idCompra = :idCompra
+select count(1) from compra where id = :id

@@ -26,6 +26,7 @@ public class ServicioCrearCompra {
     private final DaoCliente daoCliente;
 
     public Long ejecutar(Compra compra) {
+        validarExistenciaCompra(compra);
         double precio;
         List<Compra> compras = new ArrayList<>();
         if (daoCliente.consultarPorId(compra.getIdCliente()).getTipoCliente() == ES_CLIENTE_ANTIGUO) {

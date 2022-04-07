@@ -1,3 +1,3 @@
 delete
 from compra
-where idCompra = :idCompra
+where id = :id
