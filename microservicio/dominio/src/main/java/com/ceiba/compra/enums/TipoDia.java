@@ -1,9 +1,8 @@
 package com.ceiba.compra.enums;
 
 public enum TipoDia {
-    SABADO("SABADO"),
-    ENTRE_SEMANA("ENTRE_SEMANA"),
-    DOMINGO("DOMINGO");
+    FIN_DE_SEMANA("FIN_DE_SEMANA"),
+    ENTRE_SEMANA("ENTRE_SEMANA");
 
     String nombre;
 

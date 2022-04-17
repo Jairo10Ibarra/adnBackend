@@ -55,7 +55,7 @@ public class ServicioCrearCompra {
 
     private boolean verificarSiAplicaDescuento(LocalDate fecha) {
         boolean aplicaDescuento = false;
-        if (!fecha.equals(TipoDia.DOMINGO) && !fecha.equals(TipoDia.SABADO)) {
+        if (!fecha.equals(TipoDia.FIN_DE_SEMANA)) {
             aplicaDescuento = true;
         }
         return aplicaDescuento;

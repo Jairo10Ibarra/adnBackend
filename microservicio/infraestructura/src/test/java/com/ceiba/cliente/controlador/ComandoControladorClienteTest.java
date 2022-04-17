@@ -35,7 +35,7 @@ class ComandoControladorClienteTest {
     void deberiaCrearUncliente() throws Exception {
 
         ComandoCliente cliente = new ComandoClienteTestDataBuilder().conNombreCliente("Guillermina").build();
-        mockMvc.perform(post("/clientes")
+        mockMvc.perform(post("/cliente")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(cliente)))
                 .andExpect(status().isOk())
