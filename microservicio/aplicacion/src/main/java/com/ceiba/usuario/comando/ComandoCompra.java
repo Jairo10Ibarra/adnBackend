@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class ComandoCompra {
 
 
-    private Long idCompra;
+    private Long id;
     private double precio;
     private int idCliente;
     private LocalDateTime fechaCompra;

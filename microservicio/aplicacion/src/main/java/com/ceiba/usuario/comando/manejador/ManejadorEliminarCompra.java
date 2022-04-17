@@ -15,8 +15,8 @@ public class ManejadorEliminarCompra implements ManejadorComando<Long> {
     }
 
 
-    public void ejecutar(Long idCompra) {
-        this.servicioEliminarCompra.ejecutar(idCompra);
+    public void ejecutar(Long id) {
+        this.servicioEliminarCompra.ejecutar(id);
     }
 
 }

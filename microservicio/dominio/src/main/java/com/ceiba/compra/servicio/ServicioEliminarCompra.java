@@ -10,8 +10,8 @@ public class ServicioEliminarCompra {
         this.repositorioCompra = repositorioCompra;
     }
 
-    public void ejecutar(Long idCompra) {
-        this.repositorioCompra.eliminar(idCompra);
+    public void ejecutar(Long id) {
+        this.repositorioCompra.eliminar(id);
     }
 
 }
