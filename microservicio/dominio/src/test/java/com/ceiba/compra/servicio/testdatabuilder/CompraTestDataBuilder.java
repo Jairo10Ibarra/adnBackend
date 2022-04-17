@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public class CompraTestDataBuilder {
 
-    private Long idCompra;
+    private Long id;
     private double precio;
     private int idCliente;
     private LocalDateTime fechaCompra;
@@ -29,8 +29,8 @@ public class CompraTestDataBuilder {
     }
 
 
-    public CompraTestDataBuilder conIdCompra(Long idCompra) {
-        this.idCompra = idCompra;
+    public CompraTestDataBuilder conId(Long id) {
+        this.id = id;
         return this;
     }
 
@@ -52,6 +52,6 @@ public class CompraTestDataBuilder {
 
 
     public Compra build() {
-        return new Compra(idCompra, precio, idCliente, fechaCompra);
+        return new Compra(id, precio, idCliente, fechaCompra);
     }
 }

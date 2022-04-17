@@ -1,8 +1,8 @@
 package com.ceiba.cliente.servicio;
 
+import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.cliente.modelo.entidad.Cliente;
 
 public class ServicioActualizarCliente {
 
@@ -19,7 +19,7 @@ public class ServicioActualizarCliente {
         this.repositorioCliente.actualizar(cliente);
     }
 
-    public void validarExistenciaPreviaCliente(Cliente cliente) {
+    private void validarExistenciaPreviaCliente(Cliente cliente) {
         boolean existe = this.repositorioCliente.existePorId(cliente.getId());
         if (!existe) {
             throw new ExcepcionDuplicidad(EL_CLIENTE_NO_EXISTE_EN_EL_SISTEMA);

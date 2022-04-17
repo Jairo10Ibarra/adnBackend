@@ -8,9 +8,9 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 public class DtoUsuario {
-    private Long id;
-    private String nombre;
-    private String clave;
-    private LocalDateTime fechaCreacion;
+     Long id;
+     String nombre;
+     String clave;
+     LocalDateTime fechaCreacion;
 
 }

@@ -17,13 +17,15 @@ public class Compra {
     Long id;
     double precio;
     int idCliente;
+    /*CLIENTE cliente*/
+
+
     LocalDateTime fechaCompra;
 
 
     public Compra(Long id, double precio, int idCliente, LocalDateTime fechaCompra) {
         validarObligatorio(fechaCompra, SE_DEBE_INGRESAR_LA_FECHA_COMPRA);
         validarPositivo(precio, EL_PRECIO_DE_LA_COMPRA_DEBE_SER_MAYOR_A_CERO);
-
         this.id = id;
         this.precio = precio;
         this.idCliente = idCliente;

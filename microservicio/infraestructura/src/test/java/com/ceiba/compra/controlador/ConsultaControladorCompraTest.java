@@ -33,7 +33,7 @@ public class ConsultaControladorCompraTest {
     void deberiaListarCompras() throws Exception {
         // arrange
         // act - assert
-        mocMvc.perform(get("/compras")
+        mocMvc.perform(get("/compra")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))

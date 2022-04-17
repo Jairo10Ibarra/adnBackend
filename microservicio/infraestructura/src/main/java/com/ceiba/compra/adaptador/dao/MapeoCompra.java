@@ -12,11 +12,11 @@ public class MapeoCompra implements RowMapper<DtoCompra>, MapperResult {
 
     @Override
     public DtoCompra mapRow(ResultSet resultSet, int rowNum) throws SQLException {
-        Long idCompra = resultSet.getLong("id");
+        Long id = resultSet.getLong("id");
         double precio = resultSet.getDouble("precio");
-        int id = resultSet.getInt("idCliente");
+        int idCliente = resultSet.getInt("idCliente");
         LocalDateTime fechaCompra = extraerLocalDateTime(resultSet, "fecha_creacion");
-        return new DtoCompra(idCompra, precio, id, fechaCompra);
+        return new DtoCompra(id, precio, idCliente, fechaCompra);
 
 
     }

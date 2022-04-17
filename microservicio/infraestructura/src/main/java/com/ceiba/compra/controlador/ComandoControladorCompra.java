@@ -11,7 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/compras")
+@CrossOrigin("*")
+@RequestMapping("/compra")
 @Api(tags = {"Controlador comando compras"})
 public class ComandoControladorCompra {
     private final ManejadorCrearCompra manejadorCrearCompra;
@@ -39,7 +40,7 @@ public class ComandoControladorCompra {
     }
 
     @PutMapping(value = "/{id}")
-    @ApiOperation("Actualizar Cliente")
+    @ApiOperation("Actualizar Compra")
     public void actualizar(@RequestBody ComandoCompra comandoCompra, @PathVariable Long idCompra) {
         comandoCompra.setIdCompra(idCompra);
         manejadorActualizarCompra.ejecutar(comandoCompra);

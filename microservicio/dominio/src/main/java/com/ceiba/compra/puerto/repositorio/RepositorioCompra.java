@@ -16,10 +16,10 @@ public interface RepositorioCompra {
     /**
      * Permite validar si existe una compra con un id
      *
-     * @param idCompra
+     * @param id
      * @return si existe o no
      */
-    boolean existe(Long idCompra);
+    boolean existe(Long id);
 
     /**
      * Permite actualizar un compra
@@ -38,8 +38,8 @@ public interface RepositorioCompra {
     /**
      * Permite eliminar una compra por id
      *
-     * @param idCompra
+     * @param id
      */
-    void eliminar(Long idCompra);
+    void eliminar(Long id);
 
 }

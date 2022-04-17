@@ -29,27 +29,31 @@ public class ServicioCrearCompra {
         validarExistenciaCompra(compra);
         double precio;
         List<Compra> compras = new ArrayList<>();
-        if (daoCliente.consultarPorId(compra.getIdCliente()).getTipoCliente() == ES_CLIENTE_ANTIGUO) {
+
+        int tipoCliente = daoCliente.consultarPorId(compra.getIdCliente()).getTipoCliente();
+
+        if (tipoCliente == ES_CLIENTE_ANTIGUO) {
+
             if (verificarSiAplicaDescuento(compra.getFechaCompra().toLocalDate())) {
                 obtenerDescuento(compra.getPrecio());
                 precio = obtenerDescuento(compra.getPrecio());
                 compras.add(new Compra(compra.getId(), precio, compra.getIdCliente(), compra.getFechaCompra()));
             }
-        } else if (daoCliente.consultarPorId(compra.getIdCliente()).getTipoCliente() == ES_CLIENTE_NUEVO) {
+        } else if (tipoCliente == ES_CLIENTE_NUEVO) {
             precio = compra.getPrecio();
             compras.add(new Compra(compra.getId(), precio, compra.getIdCliente(), compra.getFechaCompra()));
         }
         return this.repositorioCompra.crearCompra(compra);
     }
 
-    Double obtenerDescuento(double precio) {
+    private Double obtenerDescuento(double precio) {
         double descuento = 0.30;
         double valorDescuento = 0;
         valorDescuento = precio * descuento;
         return valorDescuento;
     }
 
-    boolean verificarSiAplicaDescuento(LocalDate fecha) {
+    private boolean verificarSiAplicaDescuento(LocalDate fecha) {
         boolean aplicaDescuento = false;
         if (!fecha.equals(TipoDia.DOMINGO) && !fecha.equals(TipoDia.SABADO)) {
             aplicaDescuento = true;
@@ -58,7 +62,7 @@ public class ServicioCrearCompra {
     }
 
 
-    public void validarExistenciaCompra(Compra compra) {
+    private void validarExistenciaCompra(Compra compra) {
         boolean existe = this.repositorioCompra.existe(compra.getId());
         if (existe) {
             throw new ExcepcionDuplicidad(EXISTE_UNA_COMPRA_CON_ESE_ID_EN_EL_SISTEMA);

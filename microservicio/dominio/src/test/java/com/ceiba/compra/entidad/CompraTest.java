@@ -17,7 +17,7 @@ public class CompraTest {
     @DisplayName("Deberia crear correctamente una compra")
     void deberiaCrearCorrectamenteUnaCompra() {
         LocalDateTime fechaCreacion = LocalDateTime.now();
-        Compra compra = new CompraTestDataBuilder().conFechaCompra(fechaCreacion).conIdCompra(1L).build();
+        Compra compra = new CompraTestDataBuilder().conFechaCompra(fechaCreacion).conId(1L).build();
         assertEquals(1, compra.getId());
         assertEquals(20000, compra.getPrecio());
         assertEquals(1, compra.getIdCliente());
@@ -29,7 +29,7 @@ public class CompraTest {
     void deberiaFallarSinFechaCreacionCompra() {
 
         //Arrange
-        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder().conFechaCompra(null).conIdCompra(1L);
+        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder().conFechaCompra(null).conId(1L);
         //act-assert
         BasePrueba.assertThrows(() -> {
                     compraTestDataBuilder.build();

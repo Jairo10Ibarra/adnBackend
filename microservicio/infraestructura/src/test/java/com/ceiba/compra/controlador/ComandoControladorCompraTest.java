@@ -35,7 +35,7 @@ public class ComandoControladorCompraTest {
     void deberiaCrearUnCompra() throws Exception {
 
         ComandoCompra compra = new ComandoCompraTestDataBuilder().conPrecioCompra(10000).build();
-        mockMvc.perform(post("/compras")
+        mockMvc.perform(post("/compra")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(compra)))
                 .andExpect(status().isOk())

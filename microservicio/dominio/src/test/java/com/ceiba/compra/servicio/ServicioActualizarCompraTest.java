@@ -16,7 +16,7 @@ public class ServicioActualizarCompraTest {
     @DisplayName("Deberia validar la existencia previa de una compra")
     void deberiaValidarLaExistenciaPreviaDeUnaCompra() {
         // arrange
-        Compra compra = new CompraTestDataBuilder().conIdCompra(1L).build();
+        Compra compra = new CompraTestDataBuilder().conId(1L).build();
         RepositorioCompra repositorioCompra = Mockito.mock(RepositorioCompra.class);
         Mockito.when(repositorioCompra.existePorId(Mockito.anyLong())).thenReturn(false);
         ServicioActualizarCompra servicioActualizarCompra = new ServicioActualizarCompra(repositorioCompra);
@@ -28,7 +28,7 @@ public class ServicioActualizarCompraTest {
     @DisplayName("Deberia actualizar correctamente en el repositorio")
     void deberiaActualizarCorrectamenteEnElRepositorio() {
         // arrange
-        Compra compra = new CompraTestDataBuilder().conIdCompra(1L).build();
+        Compra compra = new CompraTestDataBuilder().conId(1L).build();
         RepositorioCompra repositorioCompra = Mockito.mock(RepositorioCompra.class);
         Mockito.when(repositorioCompra.existePorId(Mockito.anyLong())).thenReturn(true);
         ServicioActualizarCompra servicioActualizarCompra = new ServicioActualizarCompra(repositorioCompra);

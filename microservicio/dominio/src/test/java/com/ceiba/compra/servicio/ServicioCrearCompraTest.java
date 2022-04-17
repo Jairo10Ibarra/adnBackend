@@ -24,7 +24,7 @@ public class ServicioCrearCompraTest {
     @DisplayName("Deberia lanzar una exepecion cuando la fecha de la compra es null o vacia")
     void deberiaLanzarUnaExepcionCuandoFechaCompraEsVaciaONula() {
         // arrange
-        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder().conFechaCompra(null).conIdCompra(1L);
+        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder().conFechaCompra(null).conId(1L);
         // act - assert
         BasePrueba.assertThrows(compraTestDataBuilder::build, ExcepcionValorObligatorio.class, "Se debe ingresar la fecha de creación de la compra");
     }
