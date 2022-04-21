@@ -20,7 +20,7 @@ public class ServicioCrearCliente {
     }
 
     private void validarExistenciaDeUnCliente(Cliente cliente) {
-        boolean existeCliente = this.repositorioCliente.existe(cliente.getNombreCliente());
+        boolean existeCliente = this.repositorioCliente.existePorId(cliente.getId());
         if (existeCliente) {
             throw new ExcepcionDuplicidad(EL_CLIENTE_YA_EXISTE_EN_EL_SISTEMA);
         }
