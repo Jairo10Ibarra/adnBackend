@@ -14,22 +14,23 @@ public class Cliente {
     private static final String SE_DEBE_INGRESAR_LA_FECHA_CREACION_CLIENTE = "Se debe ingresar la fecha de creación del cliente";
     private static final String EL_NOMBRE_DEBE_TENER_UNA_LONGITUD_MAYOR_O_IGUAL_A = "El nombre debe tener una longitud mayor o igual a %s";
 
-    private static final int LONGITUD_MINIMA_NOMBRE = 3;
-
-     Long id;
-     String nombreCliente;
-     int tipoCliente;
-     LocalDateTime fechaCreacion;
+    private static final int LONGITUD_MINIMA_NOMBRE= 4;
 
 
-    public Cliente(Long id, String nombreCliente, int tipoCliente, LocalDateTime fechaCreacionCliente) {
+    Long id;
+    String nombreCliente;
+    int tipoCliente;
+    LocalDateTime fechaCreacion;
+
+
+    public Cliente(Long id, String nombreCliente, int tipoCliente, LocalDateTime fechaCreacion) {
         validarObligatorio(nombreCliente, SE_DEBE_INGRESAR_EL_NOMBRE_DE_CLIENTE);
-        validarObligatorio(fechaCreacionCliente, SE_DEBE_INGRESAR_LA_FECHA_CREACION_CLIENTE);
+        validarObligatorio(fechaCreacion, SE_DEBE_INGRESAR_LA_FECHA_CREACION_CLIENTE);
         validarLongitud(nombreCliente, LONGITUD_MINIMA_NOMBRE, String.format(EL_NOMBRE_DEBE_TENER_UNA_LONGITUD_MAYOR_O_IGUAL_A,LONGITUD_MINIMA_NOMBRE));
         this.id = id;
         this.nombreCliente = nombreCliente;
         this.tipoCliente = tipoCliente;
-        this.fechaCreacion = fechaCreacionCliente;
+        this.fechaCreacion = fechaCreacion;
     }
 
 }

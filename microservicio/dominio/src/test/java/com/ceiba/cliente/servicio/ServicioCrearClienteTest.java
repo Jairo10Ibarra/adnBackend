@@ -28,14 +28,6 @@ public class ServicioCrearClienteTest {
         BasePrueba.assertThrows(clienteTestDataBuilder::build, ExcepcionValorObligatorio.class, "Se debe ingresar el nombre del cliente");
     }
 
-    @Test
-    @DisplayName("Deberia lanzar una exepecion cuando el nombre del cliente sea menor a 3")
-    void deberiaLanzarUnaExepcionCuandoLaLongitudDelNombreSeaMenorATresCaracteres() {
-        // arrange
-        ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder().conNombreCliente("li");
-        // act - assert
-        BasePrueba.assertThrows(clienteTestDataBuilder::build, ExcepcionLongitudValor.class, "El nombre debe tener una longitud mayor o igual a 3");
-    }
 
 
 }

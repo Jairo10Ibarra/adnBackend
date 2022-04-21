@@ -3,6 +3,7 @@ package com.ceiba.cliente.entidad;
 import com.ceiba.BasePrueba;
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.servicio.testdatabuilder.ClienteTestDataBuilder;
+import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,9 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ClienteTest {
+class ClienteTest {
+
+    private static final String DEBE_INGRESAR_EL_TIPO_CLIENTE = "Debe ingresar el tipo del cliente.";
 
 
     @Test
@@ -39,7 +42,7 @@ public class ClienteTest {
     }
 
     @Test
-    void deberiaFallarSinClave() {
+    void deberiaFallarSinFechaCreacion() {
 
         //Arrange
         ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder().conFechaCreacionCliente(null).conIdCliente(1l);
@@ -48,6 +51,18 @@ public class ClienteTest {
                     clienteTestDataBuilder.build();
                 },
                 ExcepcionValorObligatorio.class, "Se debe ingresar la fecha de creación del cliente");
+    }
+
+    @Test
+    void deberiaFallarSinTamañoNombreCliente() {
+
+        //Arrange
+        ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder().conNombreCliente("123").conIdCliente(1L);
+        //act-assert
+        BasePrueba.assertThrows(() -> {
+                    clienteTestDataBuilder.build();
+                },
+                ExcepcionLongitudValor.class, "El nombre debe tener una longitud mayor o igual a 4");
     }
 
 

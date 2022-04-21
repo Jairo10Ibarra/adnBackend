@@ -32,7 +32,7 @@ class ConsultaControladorClienteTest {
     void deberiaListarClientes() throws Exception {
         // arrange
         // act - assert
-        mocMvc.perform(get("/clientes")
+        mocMvc.perform(get("/cliente")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
