@@ -5,7 +5,6 @@ import lombok.Getter;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 import static com.ceiba.dominio.ValidadorArgumento.validarPositivo;
@@ -20,15 +19,18 @@ public class Compra {
     Long id;
     double precio;
     int idCliente;
-    LocalDateTime fechaCompra;
+    LocalDate fechaCompra;
 
-    public Compra(Long id, double precio, int idCliente, LocalDateTime fechaCompra) {
+    public Compra(Long id, double precio, int idCliente, LocalDate fechaCompra) {
         validarObligatorio(fechaCompra, SE_DEBE_INGRESAR_LA_FECHA_COMPRA);
         validarPositivo(precio, EL_PRECIO_DE_LA_COMPRA_DEBE_SER_MAYOR_A_CERO);
         this.id = id;
         this.precio = precio;
         this.idCliente = idCliente;
         this.fechaCompra = fechaCompra;
+    }
+
+    public Compra() {
     }
 
     public Double obtenerDescuento(double precio) {
@@ -39,12 +41,30 @@ public class Compra {
     }
 
     public TipoDia obtenerTipoDeDia(LocalDate fecha) {
-        if (fecha.getDayOfWeek().equals(DayOfWeek.SATURDAY) && fecha.getDayOfWeek().equals(DayOfWeek.SUNDAY)) {
+        if (fecha.getDayOfWeek().equals(DayOfWeek.SATURDAY)) {
+            return TipoDia.FIN_DE_SEMANA;
+        }
+        if ( fecha.getDayOfWeek().equals(DayOfWeek.SUNDAY)) {
+            return TipoDia.FIN_DE_SEMANA;
+        }
+
+        if (fecha.getDayOfWeek().equals(DayOfWeek.MONDAY)) {
             return TipoDia.ENTRE_SEMANA;
         }
 
-        if (fecha.getDayOfWeek().equals(DayOfWeek.MONDAY) && fecha.getDayOfWeek().equals(DayOfWeek.TUESDAY) &&
-                fecha.getDayOfWeek().equals(DayOfWeek.FRIDAY)) {
+        if (fecha.getDayOfWeek().equals(DayOfWeek.TUESDAY)) {
+            return TipoDia.ENTRE_SEMANA;
+        }
+
+        if (fecha.getDayOfWeek().equals(DayOfWeek.WEDNESDAY)) {
+            return TipoDia.ENTRE_SEMANA;
+        }
+
+        if (fecha.getDayOfWeek().equals(DayOfWeek.THURSDAY)) {
+            return TipoDia.ENTRE_SEMANA;
+        }
+
+        if (fecha.getDayOfWeek().equals(DayOfWeek.FRIDAY)) {
             return TipoDia.ENTRE_SEMANA;
         }
         return TipoDia.FESTIVO;
@@ -53,7 +73,7 @@ public class Compra {
     public boolean verificarSiAplicaDescuento(LocalDate fecha) {
         boolean aplicaDescuento = false;
         if (obtenerTipoDeDia(fecha).equals(TipoDia.ENTRE_SEMANA)) {
-            aplicaDescuento = true;
+           return aplicaDescuento = true;
         }
         return aplicaDescuento;
     }

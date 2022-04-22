@@ -2,20 +2,20 @@ package com.ceiba.compra.servicio.testdatabuilder;
 
 import com.ceiba.compra.modelo.entidad.Compra;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class CompraTestDataBuilder {
 
     private Long id;
     private double precio;
     private int idCliente;
-    private LocalDateTime fechaCompra;
+    private LocalDate fechaCompra;
 
 
     public CompraTestDataBuilder() {
         precio = 20000;
         idCliente = 1;
-        fechaCompra = LocalDateTime.now();
+        fechaCompra = LocalDate.now();
     }
 
     public CompraTestDataBuilder conPrecioCompra(double precio) {
@@ -35,18 +35,18 @@ public class CompraTestDataBuilder {
     }
 
 
-    public CompraTestDataBuilder conFechaCompra(LocalDateTime fechaCompra) {
+    public CompraTestDataBuilder conFechaCompra(LocalDate fechaCompra) {
         this.fechaCompra = fechaCompra;
         return this;
     }
 
     public CompraTestDataBuilder conFechaFinDeSeamana() {
-        this.fechaCompra = LocalDateTime.of(2022, 6, 7, 12, 1);
+        this.fechaCompra = LocalDate.of(2022, 6, 7);
         return this;
     }
 
     public CompraTestDataBuilder conFechaEntreSeamana() {
-        this.fechaCompra = LocalDateTime.of(2022, 6, 4, 12, 1);
+        this.fechaCompra = LocalDate.of(2022, 6, 4);
         return this;
     }
 

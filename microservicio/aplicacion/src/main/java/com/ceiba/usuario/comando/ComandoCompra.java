@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
 @Getter
@@ -18,6 +18,6 @@ public class ComandoCompra {
     private Long id;
     private double precio;
     private int idCliente;
-    private LocalDateTime fechaCompra;
+    private LocalDate fechaCompra;
 
 }

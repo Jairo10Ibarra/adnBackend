@@ -2,19 +2,19 @@ package com.ceiba.compra.serviciotestdatabuilder;
 
 import com.ceiba.usuario.comando.ComandoCompra;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class ComandoCompraTestDataBuilder {
 
     Long id;
     double precio;
     int idCliente;
-    LocalDateTime fechaCompra;
+    LocalDate fechaCompra;
 
     public ComandoCompraTestDataBuilder() {
         precio = 20000;
         idCliente = 1;
-        fechaCompra = LocalDateTime.now();
+        fechaCompra = LocalDate.now();
     }
 
 
