@@ -23,14 +23,15 @@ public class ServicioCrearCompra {
 
     public Long ejecutar(Compra compra) {
         validarExistenciaCompra(compra);
-        double precio;
 
         DtoCliente dtoCliente = daoCliente.consultarPorId(compra.getIdCliente());
         if (dtoCliente.getTipoCliente() == ES_CLIENTE_ANTIGUO && compra.verificarSiAplicaDescuento(compra.getFechaCompra())) {
             compra.obtenerDescuento(compra.getPrecio());
             return this.repositorioCompra.crearCompra(compra);
         }
-
+        if (dtoCliente.getTipoCliente()  == ES_CLIENTE_NUEVO) {
+           double precio = compra.getPrecio();
+        }
         return this.repositorioCompra.crearCompra(compra);
     }
 

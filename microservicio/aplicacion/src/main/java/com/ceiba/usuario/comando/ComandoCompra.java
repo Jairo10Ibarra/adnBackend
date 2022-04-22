@@ -7,13 +7,11 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ComandoCompra {
-
 
     private Long id;
     private double precio;

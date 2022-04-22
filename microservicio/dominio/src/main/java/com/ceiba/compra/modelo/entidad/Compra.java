@@ -35,13 +35,11 @@ public class Compra {
 
     public void obtenerDescuento(double precio) {
         double descuento = 0.30;
-        double valorDescuento = 0;
-        valorDescuento = precio * descuento;
+        double valorDescuento =precio*descuento;
         this.precio=precio-valorDescuento;
     }
 
     public TipoDia obtenerTipoDeDia(LocalDate fecha) {
-        TipoDia tipoDia = TipoDia.FESTIVO;
         if (fecha.getDayOfWeek().equals(DayOfWeek.SATURDAY)) {
             return TipoDia.FIN_DE_SEMANA;
         }
@@ -72,11 +70,10 @@ public class Compra {
     }
 
     public boolean verificarSiAplicaDescuento(LocalDate fecha) {
-        boolean aplicaDescuento = false;
         if (obtenerTipoDeDia(fecha).equals(TipoDia.ENTRE_SEMANA)) {
-           return aplicaDescuento = true;
+           return true;
         }
-        return aplicaDescuento;
+        return false;
     }
 
 }

@@ -23,6 +23,34 @@ public class ServicioCrearCompraTest {
 
     private static final String LA_COMPRA_YA_EXISTE = "la compra ya existe en el sistema";
 
+    @Test
+    @DisplayName("Deberia crear una compra exitosamente")
+    void deberiaCrearUnaCompraExitosamente() {
+
+        //arrange
+        LocalDate fecha = LocalDate.of(2022,4,22);
+        Compra compra = new CompraTestDataBuilder().conId(1L).conFechaCompra(fecha).build();
+
+        ServicioCrearCompra servicioCrearCompra = Mockito.mock(ServicioCrearCompra.class);
+
+        DaoCliente daoCliente = Mockito.mock(DaoCliente.class);
+
+        RepositorioCompra repositorioCompra = Mockito.mock(RepositorioCompra.class);
+
+
+        Mockito.when(repositorioCompra.existePorId(Mockito.anyLong())).thenReturn(false);
+        Mockito.when(repositorioCompra.crearCompra(Mockito.any())).thenReturn(2L);
+        Mockito.when(daoCliente.consultarPorId(Mockito.anyInt())).thenReturn(new DtoCliente(1L,"Jairo",10, LocalDateTime.now()));
+        servicioCrearCompra = new ServicioCrearCompra(repositorioCompra, daoCliente);
+
+        // act
+
+        Long idCompraCreada = servicioCrearCompra.ejecutar(compra);
+
+        // assert
+        assertEquals(idCompraCreada, 2L);
+
+    }
 
     @Test
     @DisplayName("Deberia aplicar descuento si es cliente antiguo y la fecha es entre semana")
