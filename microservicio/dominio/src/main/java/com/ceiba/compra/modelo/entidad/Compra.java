@@ -21,8 +21,6 @@ public class Compra {
     Long id;
     double precio;
     int idCliente;
-    Cliente cliente;
-
     LocalDateTime fechaCompra;
 
     public Compra(Long id, double precio, int idCliente, LocalDateTime fechaCompra) {
@@ -32,9 +30,6 @@ public class Compra {
         this.precio = precio;
         this.idCliente = idCliente;
         this.fechaCompra = fechaCompra;
-    }
-
-    public Compra() {
     }
 
     public Double obtenerDescuento(double precio) {
@@ -56,7 +51,7 @@ public class Compra {
         return TipoDia.FESTIVO;
     }
 
-    private boolean verificarSiAplicaDescuento(LocalDate fecha) {
+    public boolean verificarSiAplicaDescuento(LocalDate fecha) {
         boolean aplicaDescuento = false;
         if (obtenerTipoDeDia(fecha).equals(TipoDia.ENTRE_SEMANA)) {
             aplicaDescuento = true;
