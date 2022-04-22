@@ -33,7 +33,7 @@ public class DaoClienteMysql implements DaoCliente {
     public DtoCliente consultarPorId(int idCliente) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", idCliente);
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlConsultarPorId, paramSource,  new MapeoCliente());
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlConsultarPorId, paramSource, new MapeoCliente());
     }
 
 }

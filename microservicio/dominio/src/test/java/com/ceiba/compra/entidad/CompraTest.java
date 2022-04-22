@@ -47,7 +47,7 @@ public class CompraTest {
         Compra compra = new CompraTestDataBuilder().conPrecioCompra(20000).conFechaCompra(fechaCreacion).conId(1L).build();
         compra.obtenerDescuento(compra.getPrecio());
         //act-assert
-        assertEquals(20000, compra.getPrecio());
+        assertEquals(14000, compra.getPrecio());
     }
 
     @Test
@@ -145,6 +145,8 @@ public class CompraTest {
         assertEquals("FIN_DE_SEMANA", tipoDia);
 
     }
+
+
 
 
 
