@@ -1,6 +1,5 @@
 package com.ceiba.compra.modelo.entidad;
 
-import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.compra.enums.TipoDia;
 import lombok.Getter;
 
@@ -39,13 +38,13 @@ public class Compra {
         return valorDescuento;
     }
 
-    private TipoDia obtenerTipoDeDia(LocalDate fecha){
-        if (fecha.getDayOfWeek().equals(DayOfWeek.SATURDAY) && fecha.getDayOfWeek().equals(DayOfWeek.SUNDAY)){
-            return  TipoDia.ENTRE_SEMANA;
+    public TipoDia obtenerTipoDeDia(LocalDate fecha) {
+        if (fecha.getDayOfWeek().equals(DayOfWeek.SATURDAY) && fecha.getDayOfWeek().equals(DayOfWeek.SUNDAY)) {
+            return TipoDia.ENTRE_SEMANA;
         }
 
         if (fecha.getDayOfWeek().equals(DayOfWeek.MONDAY) && fecha.getDayOfWeek().equals(DayOfWeek.TUESDAY) &&
-                fecha.getDayOfWeek().equals(DayOfWeek.FRIDAY) && fecha.getDayOfWeek().equals(DayOfWeek.WEDNESDAY) && fecha.getDayOfWeek().equals(DayOfWeek.THURSDAY)){
+                fecha.getDayOfWeek().equals(DayOfWeek.FRIDAY)) {
             return TipoDia.ENTRE_SEMANA;
         }
         return TipoDia.FESTIVO;

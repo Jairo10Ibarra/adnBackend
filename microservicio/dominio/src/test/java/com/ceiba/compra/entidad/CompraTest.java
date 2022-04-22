@@ -7,6 +7,7 @@ import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -36,6 +37,21 @@ public class CompraTest {
                 },
                 ExcepcionValorObligatorio.class, "Se debe ingresar la fecha de creación de la compra");
     }
+
+    @Test
+    @DisplayName("Deberia obtener descuento")
+    void deberiaObtenerDescuento() {
+
+        //Arrange
+        LocalDateTime fechaCreacion = LocalDateTime.now();
+        Compra compra = new CompraTestDataBuilder().conPrecioCompra(20000).conFechaCompra(fechaCreacion).conId(1L).build();
+        compra.obtenerDescuento(compra.getPrecio());
+        //act-assert
+        assertEquals(20000, compra.getPrecio());
+    }
+
+
+
 
 
 }
