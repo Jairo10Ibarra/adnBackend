@@ -21,7 +21,7 @@ public class ServicioCrearClienteTest {
     void deberiaCrearUnClienteExitosamente() {
 
         //arrange
-        Cliente cliente = new ClienteTestDataBuilder().conIdCliente(1L).build();
+        Cliente cliente = new ClienteTestDataBuilder().conIdCliente(2L).build();
         RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
 
         Mockito.when(repositorioCliente.existePorId(Mockito.anyLong())).thenReturn(false);

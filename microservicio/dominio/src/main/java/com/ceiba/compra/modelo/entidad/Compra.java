@@ -1,7 +1,11 @@
 package com.ceiba.compra.modelo.entidad;
 
+import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.compra.enums.TipoDia;
 import lombok.Getter;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
@@ -17,11 +21,9 @@ public class Compra {
     Long id;
     double precio;
     int idCliente;
-    /*CLIENTE cliente*/
-
+    Cliente cliente;
 
     LocalDateTime fechaCompra;
-
 
     public Compra(Long id, double precio, int idCliente, LocalDateTime fechaCompra) {
         validarObligatorio(fechaCompra, SE_DEBE_INGRESAR_LA_FECHA_COMPRA);
@@ -31,4 +33,35 @@ public class Compra {
         this.idCliente = idCliente;
         this.fechaCompra = fechaCompra;
     }
+
+    public Compra() {
+    }
+
+    public Double obtenerDescuento(double precio) {
+        double descuento = 0.30;
+        double valorDescuento = 0;
+        valorDescuento = precio * descuento;
+        return valorDescuento;
+    }
+
+    private TipoDia obtenerTipoDeDia(LocalDate fecha){
+        if (fecha.getDayOfWeek().equals(DayOfWeek.SATURDAY) && fecha.getDayOfWeek().equals(DayOfWeek.SUNDAY)){
+            return  TipoDia.ENTRE_SEMANA;
+        }
+
+        if (fecha.getDayOfWeek().equals(DayOfWeek.MONDAY) && fecha.getDayOfWeek().equals(DayOfWeek.TUESDAY) &&
+                fecha.getDayOfWeek().equals(DayOfWeek.FRIDAY) && fecha.getDayOfWeek().equals(DayOfWeek.WEDNESDAY) && fecha.getDayOfWeek().equals(DayOfWeek.THURSDAY)){
+            return TipoDia.ENTRE_SEMANA;
+        }
+        return TipoDia.FESTIVO;
+    }
+
+    private boolean verificarSiAplicaDescuento(LocalDate fecha) {
+        boolean aplicaDescuento = false;
+        if (obtenerTipoDeDia(fecha).equals(TipoDia.ENTRE_SEMANA)) {
+            aplicaDescuento = true;
+        }
+        return aplicaDescuento;
+    }
+
 }
