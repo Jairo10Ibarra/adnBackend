@@ -68,10 +68,7 @@ public class Compra {
     }
 
     public boolean verificarSiAplicaDescuento(LocalDate fecha) {
-        if (obtenerTipoDeDia(fecha).equals(TipoDia.ENTRE_SEMANA)) {
-           return true;
-        }
-        return false;
+        return (obtenerTipoDeDia(fecha).equals(TipoDia.ENTRE_SEMANA));
     }
-
 }
+
