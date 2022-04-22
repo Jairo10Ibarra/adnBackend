@@ -33,14 +33,15 @@ public class Compra {
     public Compra() {
     }
 
-    public Double obtenerDescuento(double precio) {
+    public void obtenerDescuento(double precio) {
         double descuento = 0.30;
         double valorDescuento = 0;
         valorDescuento = precio * descuento;
-        return valorDescuento;
+        this.precio=precio-valorDescuento;
     }
 
     public TipoDia obtenerTipoDeDia(LocalDate fecha) {
+        TipoDia tipoDia = TipoDia.FESTIVO;
         if (fecha.getDayOfWeek().equals(DayOfWeek.SATURDAY)) {
             return TipoDia.FIN_DE_SEMANA;
         }
