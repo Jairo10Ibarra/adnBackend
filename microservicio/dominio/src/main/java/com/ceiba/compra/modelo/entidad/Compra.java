@@ -30,8 +30,6 @@ public class Compra {
         this.fechaCompra = fechaCompra;
     }
 
-    public Compra() {
-    }
 
     public void obtenerDescuento(double precio) {
         double descuento = 0.30;

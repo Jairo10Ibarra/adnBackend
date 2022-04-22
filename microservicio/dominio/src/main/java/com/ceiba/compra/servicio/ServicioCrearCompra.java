@@ -30,7 +30,7 @@ public class ServicioCrearCompra {
             return this.repositorioCompra.crearCompra(compra);
         }
         if (dtoCliente.getTipoCliente()  == ES_CLIENTE_NUEVO) {
-           double precio = compra.getPrecio();
+            return this.repositorioCompra.crearCompra(compra);
         }
         return this.repositorioCompra.crearCompra(compra);
     }
