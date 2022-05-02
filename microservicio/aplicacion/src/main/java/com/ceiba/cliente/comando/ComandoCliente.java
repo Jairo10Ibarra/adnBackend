@@ -1,4 +1,4 @@
-package com.ceiba.usuario.comando;
+package com.ceiba.cliente.comando;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

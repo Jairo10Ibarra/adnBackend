@@ -1,4 +1,4 @@
-package com.ceiba.usuario.comando.manejador;
+package com.ceiba.compra.comando.manejador;
 
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.compra.servicio.ServicioEliminarCompra;

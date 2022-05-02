@@ -1,6 +1,6 @@
 package com.ceiba.compra.serviciotestdatabuilder;
 
-import com.ceiba.usuario.comando.ComandoCompra;
+import com.ceiba.compra.ComandoCompra;
 
 import java.time.LocalDate;
 

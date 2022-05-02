@@ -2,7 +2,7 @@ package com.ceiba.cliente.controlador;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.cliente.serviciotestdatabuilder.ComandoClienteTestDataBuilder;
-import com.ceiba.usuario.comando.ComandoCliente;
+import com.ceiba.cliente.comando.ComandoCliente;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

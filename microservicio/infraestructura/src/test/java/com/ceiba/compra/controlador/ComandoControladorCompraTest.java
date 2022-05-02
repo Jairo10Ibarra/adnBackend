@@ -2,7 +2,7 @@ package com.ceiba.compra.controlador;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.compra.serviciotestdatabuilder.ComandoCompraTestDataBuilder;
-import com.ceiba.usuario.comando.ComandoCompra;
+import com.ceiba.compra.ComandoCompra;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

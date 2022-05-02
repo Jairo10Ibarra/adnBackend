@@ -1,7 +1,7 @@
 package com.ceiba.compra.controlador;
 
 import com.ceiba.compra.modelo.dto.DtoCompra;
-import com.ceiba.usuario.consulta.ManejadorListarCompras;
+import com.ceiba.compra.consulta.ManejadorListarCompras;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;

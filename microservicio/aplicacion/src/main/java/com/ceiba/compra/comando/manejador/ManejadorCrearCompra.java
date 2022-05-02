@@ -1,9 +1,9 @@
-package com.ceiba.usuario.comando.manejador;
+package com.ceiba.compra.comando.manejador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
-import com.ceiba.usuario.comando.ComandoCompra;
-import com.ceiba.usuario.comando.fabrica.FabricaCompra;
+import com.ceiba.compra.ComandoCompra;
+import com.ceiba.compra.comando.fabrica.FabricaCompra;
 import com.ceiba.compra.modelo.entidad.Compra;
 import com.ceiba.compra.servicio.ServicioCrearCompra;
 import org.springframework.stereotype.Component;

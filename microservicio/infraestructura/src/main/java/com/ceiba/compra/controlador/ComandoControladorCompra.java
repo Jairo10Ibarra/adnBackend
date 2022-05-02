@@ -1,10 +1,10 @@
 package com.ceiba.compra.controlador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.usuario.comando.ComandoCompra;
-import com.ceiba.usuario.comando.manejador.ManejadorActualizarCompra;
-import com.ceiba.usuario.comando.manejador.ManejadorCrearCompra;
-import com.ceiba.usuario.comando.manejador.ManejadorEliminarCompra;
+import com.ceiba.compra.ComandoCompra;
+import com.ceiba.compra.comando.manejador.ManejadorActualizarCompra;
+import com.ceiba.compra.comando.manejador.ManejadorCrearCompra;
+import com.ceiba.compra.comando.manejador.ManejadorEliminarCompra;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

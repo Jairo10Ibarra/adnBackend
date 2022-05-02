@@ -1,4 +1,4 @@
-package com.ceiba.usuario.consulta;
+package com.ceiba.compra.consulta;
 
 import com.ceiba.compra.modelo.dto.DtoCompra;
 import com.ceiba.compra.puerto.dao.DaoCompra;

@@ -1,10 +1,10 @@
 package com.ceiba.cliente.controlador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.usuario.comando.ComandoCliente;
-import com.ceiba.usuario.comando.manejador.ManejadorActualizarCliente;
-import com.ceiba.usuario.comando.manejador.ManejadorCrearCliente;
-import com.ceiba.usuario.comando.manejador.ManejadorEliminarCliente;
+import com.ceiba.cliente.comando.ComandoCliente;
+import com.ceiba.cliente.comando.manejador.ManejadorActualizarCliente;
+import com.ceiba.cliente.comando.manejador.ManejadorCrearCliente;
+import com.ceiba.cliente.comando.manejador.ManejadorEliminarCliente;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

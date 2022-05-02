@@ -1,6 +1,6 @@
 package com.ceiba.cliente.serviciotestdatabuilder;
 
-import com.ceiba.usuario.comando.ComandoCliente;
+import com.ceiba.cliente.comando.ComandoCliente;
 
 import java.time.LocalDateTime;
 

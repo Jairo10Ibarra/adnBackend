@@ -1,9 +1,9 @@
-package com.ceiba.usuario.comando.manejador;
+package com.ceiba.cliente.comando.manejador;
 
 
 import com.ceiba.manejador.ManejadorComando;
-import com.ceiba.usuario.comando.ComandoCliente;
-import com.ceiba.usuario.comando.fabrica.FabricaCliente;
+import com.ceiba.cliente.comando.ComandoCliente;
+import com.ceiba.cliente.comando.fabrica.FabricaCliente;
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.servicio.ServicioActualizarCliente;
 import org.springframework.stereotype.Component;
